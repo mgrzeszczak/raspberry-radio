@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="resources/style/style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+     <div class="jumbotron">
+       <h1>Raspberry Pi Radio</h1>
+       <p>
+         <a class="btn btn-lg btn-danger" href="#" role="button"  onclick="app.pause();">Pause</a>
+         <a class="btn btn-lg btn-primary" href="#" role="button"  onclick="app.prev();">Prev</a>
+         <a class="btn btn-lg btn-success" href="#" role="button"  onclick="app.next();">Next</a>
+         <a class="btn btn-lg btn-primary" href="#" role="button"  onclick="app.vol_down();">Vol -5</a>
+         <a class="btn btn-lg btn-success" href="#" role="button"  onclick="app.vol_up();">Vol +5</a>
+       </p>
+       <p id="volume-p">
+         Volume: 100%
+       </p>
+     </div>
+
+  <form id="add-form" class="form-horizontal">
+    <fieldset>
+
+    <!-- Form Name -->
+    <h3>New station</h3>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="name">Name</label>
+      <div class="col-md-4">
+        <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md" required="">
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="url">Url</label>
+      <div class="col-md-4">
+        <input id="url" name="url" type="text" placeholder="Url" class="form-control input-md" required="">
+      </div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="add"></label>
+      <div class="col-md-4">
+        <button id="add" name="add" class="btn btn-primary" onclick="app.add();">Add</button>
+      </div>
+    </div>
+
+    </fieldset>
+  </form>
+
+
+<h3>Stations</h1>
+
+    <div id="station_list" class="list-group">
+      <a href="#" class="list-group-item active">First item</a>
+      <a href="#" class="list-group-item">Second item</a>
+      <a href="#" class="list-group-item">Third item</a>
+    </div>
+
+     <footer class="footer">
+       <p>&copy; 2017 Maciej Grzeszczak</p>
+     </footer>
+
+   </div> <!-- /container -->
+
+    <script src="resources/script/app.js"></script>
+    <script>
+      app.init();
+    </script>
+</body>
+</html>
